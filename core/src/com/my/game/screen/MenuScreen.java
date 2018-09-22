@@ -35,7 +35,10 @@ public class MenuScreen extends Base2DScreen {
         pos = new Vector2(0f,0f);
         background = new Background(new TextureRegion(bg));
         exit = new Exit(new TextureRegion(img));
-        exit.setHeightProportion(0.2f);
+        exit.setHeightProportion(0.1f);
+        exit.setBottom(0.4f);
+        exit.setRight(0.5f);
+
     }
 
 
