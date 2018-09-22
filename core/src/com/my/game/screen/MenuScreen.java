@@ -39,6 +39,7 @@ public class MenuScreen extends Base2DScreen {
         exit.setBottom(0.4f);
         exit.setRight(0.5f);
 
+
     }
 
 
@@ -61,6 +62,7 @@ public class MenuScreen extends Base2DScreen {
     @Override
     public void dispose() {
         bg.dispose();
+        img.dispose();
         super.dispose();
     }
 
