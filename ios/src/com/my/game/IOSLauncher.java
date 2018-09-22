@@ -1,5 +1,7 @@
 package com.my.game;
-
+/**
+ * @ Author  Shabikov Almir
+ * */
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;
 
