@@ -1,4 +1,4 @@
-package com.my.game.screen;
+package com.my.game.Sprite;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -56,11 +56,11 @@ public class MenuScreen2 extends Base2DScreen {
         super.dispose();
     }
 
-    @Override
+  /** @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         System.out.println("touchDown screenX = " + screenX + " screenY = "+ (Gdx.graphics.getHeight() - screenY));
         touch.set(screenX, Gdx.graphics.getHeight() - screenY);
         v.set(touch.cpy().sub(pos).setLength(0.5f));
         return super.touchDown(screenX, screenY, pointer, button);
-    }
+    }*/
 }

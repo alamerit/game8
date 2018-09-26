@@ -1,4 +1,4 @@
-package com.my.game.screen;
+package com.my.game.Sprites;
 
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -15,12 +15,5 @@ public class Background extends Sprite {
     public void resize(Rect worldBounds) {
         setHeightProportion(worldBounds.getHeight());
         pos.set(worldBounds.pos);
-
-    }
-
-    @Override
-    public boolean touchDown(Vector2 touch, int pointer) {
-        System.out.println("krhjgoiege");
-        return super.touchDown(touch, pointer);
     }
 }

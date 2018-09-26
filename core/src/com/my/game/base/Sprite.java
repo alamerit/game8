@@ -34,6 +34,9 @@ public class Sprite extends Rect {
     public void update(float delta) {
 
     }
+    public void update() {
+
+    }
 
     public boolean touchDown(Vector2 touch, int pointer) {
 
@@ -44,6 +47,7 @@ public class Sprite extends Rect {
 
         return false;
     }
+
 
     public float getAngle() {
         return angle;
@@ -71,4 +75,8 @@ public class Sprite extends Rect {
                 angle // угол поворота
         );
     }
+
+    public void keycode(int keycode) {
+    }
 }
+
