@@ -9,14 +9,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.my.game.Sprites.ButtonExit;
-import com.my.game.Sprites.ButtonPlay;
-import com.my.game.Sprites.Ship;
-import com.my.game.Sprites.Star;
+import com.my.game.sprites.ButtonExit;
+import com.my.game.sprites.ButtonPlay;
+import com.my.game.sprites.Star;
 import com.my.game.base.ActionListener;
 import com.my.game.base.Base2DScreen;
 import com.my.game.math.Rect;
-import com.my.game.Sprites.Background;
+import com.my.game.sprites.Background;
 
 public class MenuScreen extends Base2DScreen implements ActionListener {
 

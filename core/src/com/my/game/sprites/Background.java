@@ -1,8 +1,7 @@
-package com.my.game.Sprites;
+package com.my.game.sprites;
 
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.Vector2;
 import com.my.game.base.Sprite;
 import com.my.game.math.Rect;
 

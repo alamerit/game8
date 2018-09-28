@@ -1,4 +1,4 @@
-package com.my.game.Sprite;
+package com.my.game.sprite;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;

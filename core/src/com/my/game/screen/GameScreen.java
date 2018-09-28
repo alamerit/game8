@@ -7,9 +7,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.my.game.Sprites.Background;
-import com.my.game.Sprites.Ship;
-import com.my.game.Sprites.Star;
+import com.my.game.pool.BulletPool;
+import com.my.game.sprites.Background;
+import com.my.game.sprites.MainShip;
+import com.my.game.sprites.Star;
 import com.my.game.base.Base2DScreen;
 import com.my.game.math.Rect;
 
@@ -20,10 +21,13 @@ public class GameScreen extends Base2DScreen {
     Background background;
     Texture bg;
     TextureAtlas atlas;
-    Ship ship;
-    TextureAtlas hero;
-    Vector2 presd;
+
+
     Star[] star;
+
+    MainShip mainShip;
+
+    BulletPool bulletPool;
 
     public GameScreen(Game game) {
         super(game);
@@ -35,15 +39,12 @@ public class GameScreen extends Base2DScreen {
         bg = new Texture("bg.png");
         background = new Background(new TextureRegion(bg));
         atlas = new TextureAtlas("textures/mainAtlas.tpack");
-        hero = new TextureAtlas("textures/ship8t.atlas");
-        ship = new Ship(hero,this);
         star = new Star[STAR_COUNT];
         for (int i = 0; i < star.length; i++) {
             star[i] = new Star(atlas);
-
         }
-        ship = new Ship(hero,this);
-
+        bulletPool = new BulletPool();
+        mainShip = new MainShip(atlas, bulletPool);
     }
 
     @Override
@@ -53,23 +54,14 @@ public class GameScreen extends Base2DScreen {
         checkCollisions();
         deleteAllDestroyed();
         draw();
-       // ship.setRight(Ship.press + 0.04f);
-        ship.update(ship.getBottom());
-
-        //ship.setRight(ship.getRight()+0f);
-       // System.out.println(presd + "000000000000000");
-      //  if(ship())
-
-
-
     }
 
     public void update(float delta) {
         for (int i = 0; i < star.length; i++) {
             star[i].update(delta);
-
         }
-
+        mainShip.update(delta);
+        bulletPool.updateActiveObjects(delta);
     }
 
     public void checkCollisions() {
@@ -77,19 +69,19 @@ public class GameScreen extends Base2DScreen {
     }
 
     public void deleteAllDestroyed() {
-
+        bulletPool.freeAllDestroyedActiveObjects();
     }
 
     public void draw() {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(1, 0.4f, 0.6f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         background.draw(batch);
-
         for (int i = 0; i < star.length; i++) {
             star[i].draw(batch);
         }
-        ship.draw(batch);
+        mainShip.draw(batch);
+        bulletPool.drawActiveObjects(batch);
         batch.end();
     }
 
@@ -97,30 +89,53 @@ public class GameScreen extends Base2DScreen {
     protected void resize(Rect worldBounds) {
         super.resize(worldBounds);
         background.resize(worldBounds);
-        ship.resize(worldBounds);
         for (int i = 0; i < star.length; i++) {
             star[i].resize(worldBounds);
         }
+        mainShip.resize(worldBounds);
     }
 
     @Override
     public void dispose() {
         bg.dispose();
         atlas.dispose();
+        bulletPool.dispose();
         super.dispose();
     }
 
     @Override
+    public boolean keyDown(int keycode) {
+        mainShip.keyDown(keycode);
+        return super.keyDown(keycode);
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        mainShip.keyUp(keycode);
+        return super.keyUp(keycode);
+    }
+
+    @Override
     public boolean touchDown(Vector2 touch, int pointer) {
-        ship.tuchDown(touch,pointer);
+        mainShip.touchDown(touch, pointer);
         return super.touchDown(touch, pointer);
     }
 
     @Override
-    public boolean keyDown(int keycode) {
-        ship.keyDown(keycode);
-        return super.keyDown(keycode);
+    public boolean touchUp(Vector2 touch, int pointer) {
+        mainShip.touchUp(touch, pointer);
+        return super.touchUp(touch, pointer);
     }
 
-}
+    @Override
+    public void pause() {
+        super.pause();
+        mainShip.pause();
+    }
 
+    @Override
+    public void resume() {
+        super.resume();
+        mainShip.resume();
+    }
+}

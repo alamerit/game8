@@ -13,7 +13,6 @@ public class ScaledTouchUpButton extends Sprite {
     public ScaledTouchUpButton(TextureRegion region, ActionListener actionListener, float pressScale) {
         super(region);
         this.actionListener = actionListener;
-
         this.pressScale = pressScale;
     }
 

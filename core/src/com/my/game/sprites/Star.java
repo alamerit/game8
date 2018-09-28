@@ -1,4 +1,4 @@
-package com.my.game.Sprites;
+package com.my.game.sprites;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
