@@ -1,9 +1,10 @@
 package com.my.game;
-/**
- * @ Author  Shabikov Almir
- * */
-        import com.badlogic.gdx.Game;
-        import com.my.game.screen.MenuScreen;
+
+
+import com.badlogic.gdx.Game;
+
+
+
 
 public class Star2DGame extends Game {
     @Override

@@ -1,7 +1,5 @@
 package com.my.game.desktop;
-/**
- * @ Author  Shafikov Almir
- * */
+
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.my.game.Star2DGame;
@@ -9,7 +7,10 @@ import com.my.game.Star2DGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		//config.resizable = false;
+		float aspect = 3f/4f;
+		config.resizable = false;
+		config.width = 300;
+		config.height = (int) (config.width / aspect);
 		new LwjglApplication(new Star2DGame(), config);
 	}
 }

@@ -1,7 +1,6 @@
 package com.my.game.base;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.my.game.base.Sprite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +46,11 @@ public abstract class SpritesPool<T extends Sprite> {
         }
     }
 
+    public void freeAllActiveObjects() {
+        freeObjects.addAll(activeObjects);
+        activeObjects.clear();
+    }
+
     private void free(T object) {
         if (activeObjects.remove(object)) {
             freeObjects.add(object);
@@ -76,3 +80,4 @@ public abstract class SpritesPool<T extends Sprite> {
 
     }
 }
+

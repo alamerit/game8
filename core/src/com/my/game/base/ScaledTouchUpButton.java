@@ -41,3 +41,4 @@ public class ScaledTouchUpButton extends Sprite {
         return false;
     }
 }
+

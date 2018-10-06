@@ -1,6 +1,5 @@
 package com.my.game.utils;
 
-
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class Regions {

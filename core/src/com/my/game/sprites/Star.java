@@ -6,14 +6,14 @@ import com.my.game.base.Sprite;
 import com.my.game.math.Rect;
 import com.my.game.math.Rnd;
 
-public class Star extends Sprite  {
+public class Star extends Sprite {
 
     private Vector2 v = new Vector2();
     private Rect worldBounds;
 
     public Star(TextureAtlas atlas) {
         super(atlas.findRegion("star"));
-        v.set(Rnd.nextFloat(-0.005f, 0.005f), Rnd.nextFloat(-0.1f, -0.01f));
+        v.set(Rnd.nextFloat(-0.005f, 0.005f), Rnd.nextFloat(-0.5f, -0.1f));
         setHeightProportion(Rnd.nextFloat(0.01f, 0.02f));
     }
 

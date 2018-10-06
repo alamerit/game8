@@ -1,7 +1,5 @@
 package com.my.game.screen;
-/**
- * @ Author  Shabikov Almir
- * */
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -9,13 +7,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import com.my.game.sprites.ButtonExit;
-import com.my.game.sprites.ButtonPlay;
-import com.my.game.sprites.Star;
 import com.my.game.base.ActionListener;
 import com.my.game.base.Base2DScreen;
 import com.my.game.math.Rect;
 import com.my.game.sprites.Background;
+import com.my.game.sprites.ButtonExit;
+import com.my.game.sprites.ButtonPlay;
+import com.my.game.sprites.Star;
 
 public class MenuScreen extends Base2DScreen implements ActionListener {
 
@@ -63,7 +61,7 @@ public class MenuScreen extends Base2DScreen implements ActionListener {
     }
 
     public void draw() {
-        Gdx.gl.glClearColor(0, 0.4f, 0, 1);
+        Gdx.gl.glClearColor(1, 0.4f, 0.6f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         background.draw(batch);

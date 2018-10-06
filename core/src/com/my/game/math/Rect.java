@@ -1,5 +1,6 @@
 package com.my.game.math;
 
+
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -10,6 +11,8 @@ public class Rect {
     public final Vector2 pos = new Vector2(); // позиция по центру
     protected float halfWidth; // половина ширины
     protected float halfHeight; // половина высоты
+
+
 
     public Rect() {
 
@@ -37,7 +40,9 @@ public class Rect {
         return pos.x + halfWidth;
     }
 
-    public float getBottom() {return pos.y - halfHeight; }
+    public float getBottom() {
+        return pos.y - halfHeight;
+    }
 
     public float getHalfWidth() {
         return halfWidth;

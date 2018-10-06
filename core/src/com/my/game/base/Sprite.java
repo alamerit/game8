@@ -4,8 +4,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.my.game.math.Rect;
-
-//import ru.geekbrains.stargame.math.Rect;
 import com.my.game.utils.Regions;
 
 public class Sprite extends Rect {
@@ -30,7 +28,6 @@ public class Sprite extends Rect {
     public Sprite(TextureRegion region, int rows, int cols, int frames) {
         this.regions = Regions.split(region, rows, cols, frames);
     }
-
 
     public void setHeightProportion(float height) {
         setHeight(height);
@@ -73,14 +70,16 @@ public class Sprite extends Rect {
     }
 
     public void draw(SpriteBatch batch) {
-        batch.draw(
-                regions[frame],
-                getLeft(), getBottom(), // точка отрисовки
-                halfWidth, halfHeight, // точка вращения
-                getWidth(), getHeight(),
-                scale, scale, // масштаб по x и y
-                angle // угол поворота
-        );
+        if (!isDestroyed) {
+            batch.draw(
+                    regions[frame],
+                    getLeft(), getBottom(), // точка отрисовки
+                    halfWidth, halfHeight, // точка вращения
+                    getWidth(), getHeight(),
+                    scale, scale, // масштаб по x и y
+                    angle // угол поворота
+            );
+        }
     }
 
     public void destroy() {
