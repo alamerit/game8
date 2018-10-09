@@ -134,6 +134,7 @@ public class GameScreen extends Base2DScreen implements ActionListener {
         }
         switch (state) {
             case PLAYING:
+                color = 1;
                 batch.setColor(1,1,1,1);
                 mainShip.update(delta);
                 enemyPool.updateActiveObjects(delta);
@@ -215,7 +216,7 @@ public class GameScreen extends Base2DScreen implements ActionListener {
         for (int i = 0; i < star.length; i++) {
             star[i].draw(batch);
         }
-        wormhole.setAngle(r = r-0.01f);
+        wormhole.setAngle(r = r-0.1f);
         wormhole.draw(batch);
         mainShip.draw(batch);
         bulletPool.drawActiveObjects(batch);
