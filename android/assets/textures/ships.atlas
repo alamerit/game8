@@ -1,4 +1,3 @@
-
 mainAtlas.png
 format: RGBA8888
 filter: MipMapLinearNearest,Linear
@@ -73,3 +72,63 @@ star
   orig: 11, 10
   offset: 0, 0
   index: -1
+
+shipBoss.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bluecarrie
+  rotate: false
+  xy: 1, 365
+  size: 694, 468
+  orig: 694, 468
+  offset: 0, 0
+  index: -1
+att
+  rotate: false
+  xy: 1, 1
+  size: 256, 362
+  orig: 256, 362
+  offset: 0, 0
+  index: -1
+RD
+  rotate: false
+  xy: 259, 195
+  size: 398, 168
+  orig: 398, 168
+  offset: 0, 0
+  index: -1
+
+wor.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+blackhole
+  rotate: false
+  xy: 1, 1
+  size: 970, 900
+  orig: 970, 900
+  offset: 0, 0
+  index: -1
+
+
+
+hsootBoll.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ballet1
+  rotate: false
+  xy: 1, 1
+  size: 209, 1020
+  orig: 209, 1020
+  offset: 0, 0
+  index: -1
+boom3
+  rotate: false
+  xy: 212, 521
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+

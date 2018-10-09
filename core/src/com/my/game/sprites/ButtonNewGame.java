@@ -10,17 +10,10 @@ import com.my.game.math.Rect;
 
 public class ButtonNewGame extends ScaledTouchUpButton {
 
-
     public ButtonNewGame(TextureAtlas atlas, ActionListener actionListener) {
-            super(atlas.findRegion("button_new_game"), actionListener, 0.9f);
-            setHeightProportion(0.07f);
-        }
-    @Override
-    public void resize(Rect worldBounds) {
-        setBottom(-0.2f);
-
+        super(atlas.findRegion("button_new_game"), actionListener, 0.9f);
+        setHeightProportion(0.05f);
+        setTop(-0.012f);
     }
-
-
-    }
+}
 

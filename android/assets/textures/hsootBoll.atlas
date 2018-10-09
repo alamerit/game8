@@ -1,0 +1,19 @@
+
+hsootBoll.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ballet1
+  rotate: false
+  xy: 1, 1
+  size: 209, 1020
+  orig: 209, 1020
+  offset: 0, 0
+  index: -1
+boom3
+  rotate: false
+  xy: 212, 521
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1

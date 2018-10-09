@@ -8,6 +8,7 @@ import com.my.game.math.Rect;
 import com.my.game.pool.BulletPool;
 import com.my.game.pool.ExplosionPool;
 
+
 public class Enemy extends Ship {
 
     private enum State { DESCENT, FIGHT }
@@ -29,11 +30,13 @@ public class Enemy extends Ship {
     public void update(float delta) {
         super.update(delta);
         pos.mulAdd(v, delta);
+
         switch (state) {
             case DESCENT:
                 if (getTop() <= worldBounds.getTop()) {
                     v.set(v0);
                     state = State.FIGHT;
+
                 }
                 break;
             case FIGHT:
@@ -78,6 +81,7 @@ public class Enemy extends Ship {
     }
 
     public boolean isBulletCollision(Rect bullet) {
+
         return !(
                 bullet.getRight() < getLeft()
                         || bullet.getLeft() > getRight()

@@ -9,7 +9,6 @@ import com.my.game.pool.BulletPool;
 import com.my.game.pool.ExplosionPool;
 import com.my.game.sprites.Bullet;
 import com.my.game.sprites.Explosion;
-
 public class Ship extends Sprite {
 
     protected Vector2 v = new Vector2();

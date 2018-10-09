@@ -1,0 +1,26 @@
+
+shipBoss.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bluecarrie
+  rotate: false
+  xy: 1, 365
+  size: 694, 468
+  orig: 694, 468
+  offset: 0, 0
+  index: -1
+att
+  rotate: false
+  xy: 1, 1
+  size: 256, 362
+  orig: 256, 362
+  offset: 0, 0
+  index: -1
+RD
+  rotate: false
+  xy: 259, 195
+  size: 398, 168
+  orig: 398, 168
+  offset: 0, 0
+  index: -1
